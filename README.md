@@ -13,4 +13,4 @@ $gmx_mpi grompp -f ions.mdp -c system_lig.gro -p system.top -o system_lig_ions.t
 
 $gmx_mpi genion -s system_lig_ions.tpr -o system_lig_ions.gro -p system.top -pname NA -nname CL -neutral
 
-![Alt Image text](/relative/path/to/img.png?raw=true "CG system build")
+![Alt Image text](https://github.com/athar91/martini_membrane_simulation/blob/main/system_build.GIF "CG system build")
