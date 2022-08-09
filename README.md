@@ -7,8 +7,8 @@ gmx_mpi mdrun -deffnm minimization-vac -v
 
 python2 insane.py -f minimization-vac.gro -o system.gro -p system.top -pbc square -box 18,18,23 -l POPG:1 -l POPE:2 -u POPG:1 -u POPE:2 -fudge 0.3 -salt 0.1 -center -dm 3 -sol W -ring
 
-gmx_mpi insert-molecules -f system.gro -ci molecule.gro -nmol 100 -o system_lig.gro
+$gmx_mpi insert-molecules -f system.gro -ci molecule.gro -nmol 100 -o system_lig.gro
 
-gmx_mpi grompp -f ions.mdp -c system_lig.gro -p system.top -o system_lig_ions.tpr -maxwarn 1
+$gmx_mpi grompp -f ions.mdp -c system_lig.gro -p system.top -o system_lig_ions.tpr -maxwarn 1
 
-gmx_mpi genion -s system_lig_ions.tpr -o system_lig_ions.gro -p system.top -pname NA -nname CL -neutral​
+$gmx_mpi genion -s system_lig_ions.tpr -o system_lig_ions.gro -p system.top -pname NA -nname CL -neutral​
